@@ -1,0 +1,127 @@
+name: 🔒 Security & Privacy Concern
+description: Report security issues or privacy concerns with student data
+title: "🔒 Security: "
+labels: ["security", "privacy", "high-priority", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **⚠️ CONFIDENTIAL SECURITY REPORT ⚠️**
+        
+        Use this template to report security vulnerabilities or privacy concerns. Security issues are treated with high priority.
+        
+        **For immediate security emergencies, please contact the school IT department directly.**
+
+  - type: textarea
+    id: security-concern
+    attributes:
+      label: What security or privacy concern do you have?
+      description: Describe the security issue or privacy concern. Be specific but don't include sensitive details.
+      placeholder: "Example: Students can see other students' personal information, or the website doesn't require login to access sensitive data"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: concern-type
+    attributes:
+      label: What type of security concern is this?
+      description: Select all that apply
+      options:
+        - label: Student data is visible to unauthorized users
+        - label: No login required to access sensitive information
+        - label: Passwords are not secure enough
+        - label: Personal information is not protected
+        - label: Data could be accidentally deleted or modified
+        - label: External users might access the system
+        - label: Data is not backed up properly
+        - label: Privacy laws may not be followed
+
+  - type: textarea
+    id: data-at-risk
+    attributes:
+      label: What student data might be at risk?
+      description: Describe what information could be compromised (without revealing actual data).
+      placeholder: "Example: Student names and email addresses, or activity participation records"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How serious is this concern?
+      description: Select the severity level.
+      options:
+        - Low - Minor privacy concern, no immediate risk
+        - Medium - Could affect some students, should be addressed soon
+        - High - Affects many students or sensitive data, needs prompt attention
+        - Critical - Immediate risk to student privacy or data security
+    validations:
+      required: true
+
+  - type: textarea
+    id: how-discovered
+    attributes:
+      label: How did you discover this issue?
+      description: Briefly explain how you found this security concern.
+      placeholder: "Example: A student showed me they could see another student's information, or I noticed while testing the website"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce the issue
+      description: Provide step-by-step instructions to demonstrate the problem (without including sensitive data).
+      placeholder: |
+        1. Go to the activities website
+        2. Click on [specific area]
+        3. Notice that [security issue] occurs
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested solution (if you have one)
+      description: If you have ideas for how to fix this issue, please share them.
+      placeholder: "Example: Require students to log in before seeing activity information, or hide other students' names from the participant list"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: compliance-requirements
+    attributes:
+      label: Are there specific compliance requirements?
+      description: Select any applicable privacy laws or school policies
+      options:
+        - label: FERPA (Family Educational Rights and Privacy Act)
+        - label: COPPA (Children's Online Privacy Protection Act)
+        - label: Florida state privacy laws
+        - label: School district privacy policies
+        - label: Not sure / Need guidance
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other important details about this security concern?
+      placeholder: "Example: This could affect all students in grades 9-12, or this issue has been reported by multiple teachers"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be addressed for this security concern to be resolved
+      options:
+        - label: The security vulnerability is completely fixed
+        - label: Student data is properly protected and encrypted
+        - label: Only authorized users can access sensitive information
+        - label: Privacy laws and school policies are followed
+        - label: The fix has been tested thoroughly
+        - label: Clear privacy policies are displayed to users
+        - label: Staff are trained on new security procedures (if applicable)
+        - label: The issue cannot be reproduced after the fix

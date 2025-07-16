@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Questions
+    url: https://github.com/eallenOP/skills-expand-your-team-with-copilot/discussions
+    about: Ask questions about using the Activities website or general help
+  - name: 📚 School IT Support
+    url: mailto:it@mergington.edu
+    about: Contact the school IT department for technical support or urgent issues
+  - name: 📋 Documentation
+    url: https://github.com/eallenOP/skills-expand-your-team-with-copilot/tree/main/docs
+    about: View documentation and guides for the Activities website
