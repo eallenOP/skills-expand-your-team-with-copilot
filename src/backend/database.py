@@ -4,12 +4,113 @@ MongoDB database configuration and setup for Mergington High School API
 
 from pymongo import MongoClient
 from argon2 import PasswordHasher
+import os
 
-# Connect to MongoDB
-client = MongoClient('mongodb://localhost:27017/')
-db = client['mergington_high']
-activities_collection = db['activities']
-teachers_collection = db['teachers']
+# Connect to MongoDB or use in-memory storage for development
+try:
+    client = MongoClient('mongodb://localhost:27017/', serverSelectionTimeoutMS=5000)
+    client.admin.command('ping')  # Test connection
+    db = client['mergington_high']
+    activities_collection = db['activities']
+    teachers_collection = db['teachers']
+    print("Connected to MongoDB")
+except Exception as e:
+    print(f"MongoDB connection failed: {e}")
+    print("Using in-memory storage for development")
+    
+    # Simple in-memory storage
+    class InMemoryCollection:
+        def __init__(self):
+            self.data = {}
+        
+        def count_documents(self, query=None):
+            return len(self.data)
+        
+        def find_one(self, query):
+            if isinstance(query, dict) and "_id" in query:
+                return self.data.get(query["_id"])
+            return None
+        
+        def insert_one(self, document):
+            doc_id = document.get("_id")
+            if doc_id:
+                self.data[doc_id] = document
+        
+        def find(self, query=None):
+            if query is None:
+                return [{"_id": doc_id, **doc} for doc_id, doc in self.data.items()]
+            
+            result = []
+            for doc_id, doc in self.data.items():
+                if self._match_query({"_id": doc_id, **doc}, query):
+                    result.append({"_id": doc_id, **doc})
+            return result
+        
+        def update_one(self, query, update):
+            class UpdateResult:
+                def __init__(self, modified_count):
+                    self.modified_count = modified_count
+            
+            if isinstance(query, dict) and "_id" in query:
+                doc_id = query["_id"]
+                if doc_id in self.data:
+                    doc = self.data[doc_id]
+                    if "$push" in update:
+                        for key, value in update["$push"].items():
+                            if key in doc:
+                                doc[key].append(value)
+                            else:
+                                doc[key] = [value]
+                    if "$pull" in update:
+                        for key, value in update["$pull"].items():
+                            if key in doc and isinstance(doc[key], list):
+                                doc[key] = [x for x in doc[key] if x != value]
+                    return UpdateResult(1)
+            return UpdateResult(0)
+        
+        def aggregate(self, pipeline):
+            # Simple aggregation for getting unique days
+            if len(pipeline) >= 2 and "$unwind" in pipeline[0] and "$group" in pipeline[1]:
+                days = set()
+                for doc_id, doc in self.data.items():
+                    if "schedule_details" in doc and "days" in doc["schedule_details"]:
+                        for day in doc["schedule_details"]["days"]:
+                            days.add(day)
+                return [{"_id": day} for day in sorted(days)]
+            return []
+        
+        def _match_query(self, doc, query):
+            for key, value in query.items():
+                if "." in key:
+                    # Handle nested keys like "schedule_details.days"
+                    parts = key.split(".")
+                    current = doc
+                    for part in parts:
+                        if isinstance(current, dict) and part in current:
+                            current = current[part]
+                        else:
+                            return False
+                    
+                    if isinstance(value, dict) and "$in" in value:
+                        if not isinstance(current, list):
+                            return False
+                        if not any(item in current for item in value["$in"]):
+                            return False
+                    elif isinstance(value, dict) and "$gte" in value:
+                        if current < value["$gte"]:
+                            return False
+                    elif isinstance(value, dict) and "$lte" in value:
+                        if current > value["$lte"]:
+                            return False
+                    elif current != value:
+                        return False
+                else:
+                    if key not in doc or doc[key] != value:
+                        return False
+            return True
+    
+    activities_collection = InMemoryCollection()
+    teachers_collection = InMemoryCollection()
 
 # Methods
 def hash_password(password):
@@ -163,6 +264,17 @@ initial_activities = {
         },
         "max_participants": 16,
         "participants": ["william@mergington.edu", "jacob@mergington.edu"]
+    },
+    "Manga Maniacs": {
+        "description": "Explore the fantastic stories of the most interesting characters from Japanese Manga (graphic novels).",
+        "schedule": "Tuesdays, 7:00 PM - 8:00 PM",
+        "schedule_details": {
+            "days": ["Tuesday"],
+            "start_time": "19:00",
+            "end_time": "20:00"
+        },
+        "max_participants": 15,
+        "participants": []
     }
 }
 
