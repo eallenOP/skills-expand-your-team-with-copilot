@@ -1,0 +1,127 @@
+name: 🎨 Website Design & Usability
+description: Request improvements to website design, layout, or user experience
+title: "🎨 UI/UX: "
+labels: ["enhancement", "ui-ux", "design", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request improvements to the website's design, layout, or user experience. Help us make the website easier and more enjoyable to use!
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: What's difficult or confusing about the current website?
+      description: Describe the current problem with the website design or usability.
+      placeholder: "Example: The activity sign-up buttons are too small and hard to find, or the text is too small to read on mobile phones"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: What would you like to see improved?
+      description: Describe your suggested improvement in simple terms.
+      placeholder: "Example: Make the sign-up buttons bigger and more colorful, or use larger text that's easier to read on phones"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-users
+    attributes:
+      label: Who would benefit from this improvement?
+      description: Select who would have a better experience with this change.
+      options:
+        - Students using the website
+        - Teachers managing activities
+        - Both students and teachers
+        - People using mobile phones/tablets
+        - People with visual impairments or disabilities
+        - All users
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: device-types
+    attributes:
+      label: Which devices should this work well on?
+      description: Select all that apply
+      options:
+        - label: Desktop computers (like in the computer lab)
+        - label: Laptop computers
+        - label: Tablets (iPads, etc.)
+        - label: Mobile phones
+        - label: Chromebooks
+
+  - type: dropdown
+    id: page-area
+    attributes:
+      label: What part of the website needs improvement?
+      description: Select the main area that needs work.
+      options:
+        - Home page / main activity list
+        - Individual activity pages
+        - Sign-up process
+        - Navigation menu
+        - Colors and fonts
+        - Overall layout
+        - Mobile phone experience
+        - Entire website
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific-examples
+    attributes:
+      label: Specific examples or details
+      description: Provide specific examples of what you'd like to see changed.
+      placeholder: "Example: Change the blue color to Mergington High School's green and gold colors, or add the school logo to the top of the page"
+    validations:
+      required: false
+
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: Examples of good design
+      description: Are there other websites or apps that have features you like?
+      placeholder: "Example: I like how the school's main website has big, easy-to-read buttons, or the way Instagram makes it easy to find things"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this improvement?
+      description: Select the priority level.
+      options:
+        - Nice to have - would look better but not essential
+        - Important - would make the website much easier to use
+        - Essential - current design is causing problems
+        - Critical - current design prevents people from using the website
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other details that might help us understand your request?
+      placeholder: "Example: This would be especially helpful during activity sign-up week when lots of students are using the website at once"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be working for this improvement to be considered complete
+      options:
+        - label: The improvement makes the website easier to use
+        - label: The change works well on all device types
+        - label: The design follows Mergington High School's branding
+        - label: The improvement doesn't break any existing functionality
+        - label: Students can easily find and use the improved feature
+        - label: Teachers can easily find and use the improved feature (if applicable)
+        - label: The website remains accessible to users with disabilities

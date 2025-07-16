@@ -1,35 +1,56 @@
 
-<div align="center">
+# Mergington High School Activities Website
 
-# 🎉 Congratulations eallenOP! 🎉
+Welcome to the Mergington High School Activities website repository! This is a simple web application that allows students to view and sign up for extracurricular activities.
 
-<img src="https://octodex.github.com/images/welcometocat.png" height="200px" />
+## 🏫 About Mergington High School
 
-### 🌟 You've successfully completed the exercise! 🌟
+- **School:** Mergington High School (public high school)
+- **Location:** Mergington, Florida  
+- **Grades:** 9-12 (approximately 100-150 students per grade)
+- **School year:** August to May, 3 trimesters + optional summer cycle
+- **School motto:** "Branch out and grow"
 
-## 🚀 Share Your Success!
+## 📋 For Teachers: Requesting Changes
 
-**Show off your new skills and inspire others!**
+**Non-technical staff can easily request changes using our issue templates!**
 
-<a href="https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FeallenOP%2Fskills-expand-your-team-with-copilot%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn%0A" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/Share%20on%20X-1da1f2?style=for-the-badge&logo=x&logoColor=white" alt="Share on X" />
-</a>
-<a href="https://bsky.app/intent/compose?text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FeallenOP%2Fskills-expand-your-team-with-copilot%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn%0A" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/Share%20on%20Bluesky-0085ff?style=for-the-badge&logo=bluesky&logoColor=white" alt="Share on Bluesky" />
-</a>
-<a href="https://www.linkedin.com/feed/?shareActive=true&text=I%20just%20completed%20the%20%22Expand%20your%20team%20with%20GitHub%20Copilot%22%20GitHub%20Skills%20hands-on%20exercise!%20%F0%9F%8E%89%0A%0Ahttps%3A%2F%2Fgithub.com%2FeallenOP%2Fskills-expand-your-team-with-copilot%0A%0A%23GitHubSkills%20%23OpenSource%20%23GitHubLearn%0A" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/Share%20on%20LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Share on LinkedIn" />
-</a>
+### How to Request Changes
+1. Go to the [Issues page](https://github.com/eallenOP/skills-expand-your-team-with-copilot/issues)
+2. Click "New Issue" 
+3. Choose the appropriate template
+4. Fill out the form with your request
 
-### 🎯 What's Next?
-**Keep the momentum going!**
+### Available Templates
+- **🐛 Bug Report** - Report broken features or errors
+- **🏃 Add or Modify Activity** - Add new activities or change existing ones
+- **💡 Feature Request** - Request new website functionality  
+- **🎨 Website Design & Usability** - Improve website appearance and ease of use
+- **📊 Student Data & Grades** - Features involving student information (requires special privacy protections)
+- **🔒 Security & Privacy Concern** - Report security issues or privacy concerns
 
-[![](https://img.shields.io/badge/Return%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/eallenOP/skills-expand-your-team-with-copilot/issues/1)
-[![GitHub Skills](https://img.shields.io/badge/Explore%20GitHub%20Skills-000000?style=for-the-badge&logo=github&logoColor=white)](https://skills.github.com)
+### Need Help?
+- **Detailed guide:** [Teacher's Guide to Issue Templates](.github/ISSUE_TEMPLATE/README.md)
+- **Technical support:** Contact it@mergington.edu
+- **General questions:** Use GitHub Discussions
 
-*There's no better way to learn than building things!* 🚀
+## 🚀 For Developers
 
-</div>
+The website is built with:
+- **Backend:** FastAPI (Python)
+- **Frontend:** HTML, CSS, JavaScript
+- **Database:** MongoDB with in-memory fallback for development
+
+### Quick Start
+```bash
+cd src
+pip install -r requirements.txt
+python -m uvicorn app:app --reload
+```
+
+Visit `http://localhost:8000` to see the website and `http://localhost:8000/docs` for API documentation.
+
+For detailed development instructions, see the [Development Guide](docs/how-to-develop.md).
 
 ---
 

@@ -1,0 +1,96 @@
+name: 💡 Feature Request
+description: Request a new feature or improvement for the activities website
+title: "💡 Feature: "
+labels: ["enhancement", "feature-request", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request new features or improvements to make the activities website better for students and teachers.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: What new feature would you like?
+      description: Describe the feature you'd like to see added in simple terms.
+      placeholder: "Example: Add a calendar view so students can see when activities meet and avoid scheduling conflicts"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-solving
+    attributes:
+      label: What problem would this solve?
+      description: Explain the current problem or difficulty this feature would address.
+      placeholder: "Example: Students are confused about when activities meet and some accidentally sign up for activities that conflict with their schedule"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: who-benefits
+    attributes:
+      label: Who would benefit from this feature?
+      description: Select who would use this new feature.
+      options:
+        - Students primarily
+        - Teachers primarily
+        - Both students and teachers
+        - School administrators
+        - Parents/guardians
+    validations:
+      required: true
+
+  - type: textarea
+    id: how-it-works
+    attributes:
+      label: How do you imagine this feature working?
+      description: Describe how you think students or teachers would use this feature.
+      placeholder: "Example: Students would click a 'Calendar' button and see a monthly view showing all activity meeting times. They could click on any day to see which activities meet that day."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this feature?
+      description: Select the priority level.
+      options:
+        - Nice to have - would be helpful but not urgent
+        - Important - would significantly improve the experience
+        - Essential - really needed for the website to work well
+        - Critical - website is difficult to use without this
+    validations:
+      required: true
+
+  - type: textarea
+    id: similar-examples
+    attributes:
+      label: Examples or similar features
+      description: Do you know of other websites or apps that have similar features?
+      placeholder: "Example: Like the calendar on Google Classroom, or similar to how the school lunch menu website works"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other details that might help us understand your request?
+      placeholder: "Example: This would be especially helpful during the first week of each trimester when students are choosing activities"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be working for this feature to be considered complete
+      options:
+        - label: The feature is easy for students to find and use
+        - label: The feature is easy for teachers to find and use (if applicable)
+        - label: The feature works correctly on both computers and mobile devices
+        - label: The feature doesn't break any existing functionality
+        - label: The feature solves the problem described above
+        - label: Clear instructions are provided for how to use the feature

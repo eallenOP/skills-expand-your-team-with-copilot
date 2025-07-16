@@ -1,0 +1,126 @@
+name: 🏃 Add or Modify Activity
+description: Request to add a new extracurricular activity or modify an existing one
+title: "🏃 Activity: "
+labels: ["enhancement", "activity-management", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to request adding new extracurricular activities or modifying existing ones. Please provide complete information to help us implement your request accurately.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: What type of activity request is this?
+      description: Choose the type of change you need.
+      options:
+        - Add a new activity
+        - Modify an existing activity
+        - Remove an activity
+        - Change activity capacity (max participants)
+        - Update activity schedule or meeting times
+    validations:
+      required: true
+
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: What is the name of the activity?
+      placeholder: "Example: Drama Club, Varsity Soccer, Robotics Team"
+    validations:
+      required: true
+
+  - type: textarea
+    id: activity-description
+    attributes:
+      label: Activity Description
+      description: Provide a detailed description of the activity for students.
+      placeholder: "Example: Drama Club meets every Tuesday and Thursday after school to rehearse for our spring musical. No prior experience required - all grade levels welcome!"
+    validations:
+      required: true
+
+  - type: input
+    id: teacher-sponsor
+    attributes:
+      label: Teacher Sponsor
+      description: Which teacher is sponsoring this activity?
+      placeholder: "Example: Ms. Johnson"
+    validations:
+      required: true
+
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Participants
+      description: How many students can participate? (Enter a number)
+      placeholder: "Example: 25"
+    validations:
+      required: true
+
+  - type: textarea
+    id: meeting-schedule
+    attributes:
+      label: Meeting Schedule
+      description: When does this activity meet?
+      placeholder: "Example: Tuesdays and Thursdays, 3:30 PM - 5:00 PM in the auditorium"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: grade-levels
+    attributes:
+      label: Grade Levels
+      description: Which grade levels can participate?
+      options:
+        - label: 9th Grade (Freshmen)
+        - label: 10th Grade (Sophomores)
+        - label: 11th Grade (Juniors)
+        - label: 12th Grade (Seniors)
+
+  - type: dropdown
+    id: trimester
+    attributes:
+      label: Which trimester(s) is this activity active?
+      description: Select when the activity runs during the school year.
+      options:
+        - Trimester 1 (August - December)
+        - Trimester 2 (January - March)
+        - Trimester 3 (April - May)
+        - All trimesters
+        - Summer cycle (optional)
+    validations:
+      required: true
+
+  - type: textarea
+    id: special-requirements
+    attributes:
+      label: Special Requirements
+      description: Any special requirements, permissions, or equipment needed?
+      placeholder: "Example: Students need to bring their own instrument, requires signed permission slip, meets off-campus"
+    validations:
+      required: false
+
+  - type: textarea
+    id: existing-activity-changes
+    attributes:
+      label: If modifying existing activity, what changes are needed?
+      description: For modification requests, describe exactly what should change.
+      placeholder: "Example: Change meeting time from 3:30 PM to 4:00 PM, increase capacity from 20 to 30 students"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be completed for this request to be considered done
+      options:
+        - label: Activity appears on the website with correct information
+        - label: Students can successfully sign up for the activity
+        - label: Activity shows correct capacity and availability
+        - label: All grade level restrictions are properly enforced
+        - label: Meeting schedule is clearly displayed
+        - label: Teacher sponsor information is correct

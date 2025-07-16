@@ -1,0 +1,97 @@
+name: 🐛 Bug Report
+description: Report a problem with the Mergington High School Activities website
+title: "🐛 Bug: "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this issue! Please provide as much detail as possible to help us fix the problem quickly.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What's wrong?
+      description: Describe the problem you're experiencing in simple terms.
+      placeholder: "Example: Students can't sign up for Drama Club - the button doesn't work when they click it"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What should happen instead?
+      description: Describe what you expected to happen.
+      placeholder: "Example: Students should be able to click the 'Sign Up' button and be registered for Drama Club"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce the problem
+      description: Tell us exactly what you did when the problem occurred.
+      placeholder: |
+        1. Go to the activities website
+        2. Click on "Drama Club"
+        3. Click the "Sign Up" button
+        4. Nothing happens
+    validations:
+      required: true
+
+  - type: dropdown
+    id: who-affected
+    attributes:
+      label: Who is affected by this problem?
+      description: Select who is experiencing this issue.
+      options:
+        - Students trying to sign up for activities
+        - Teachers managing activities
+        - Both students and teachers
+        - Only specific students (please explain in additional details)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this?
+      description: Select the urgency level.
+      options:
+        - Low - Can wait for next update
+        - Medium - Should be fixed soon
+        - High - Needs immediate attention
+        - Critical - Website is unusable
+    validations:
+      required: true
+
+  - type: textarea
+    id: device-info
+    attributes:
+      label: Device and Browser Information
+      description: What device and browser were you using?
+      placeholder: "Example: Using Chrome browser on a Windows laptop in the computer lab"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Details
+      description: Any other information that might help us understand the problem?
+      placeholder: "Example: This started happening after the new school year began, or only happens during certain times of day"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be working for this issue to be considered fixed
+      options:
+        - label: The reported problem no longer occurs
+        - label: Students can successfully use the affected feature
+        - label: Teachers can successfully use the affected feature (if applicable)
+        - label: The fix doesn't break other parts of the website

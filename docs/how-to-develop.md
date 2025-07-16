@@ -66,3 +66,23 @@ These dependencies will be installed when you run `pip install -r requirements.t
 
 > [!IMPORTANT]
 > All data is stored in memory, which means data will be reset when the server restarts.
+
+## For Teachers: Requesting Changes
+
+**Non-technical staff can request changes using GitHub issue templates!**
+
+### How to Request Changes
+1. Go to the [Issues page](https://github.com/eallenOP/skills-expand-your-team-with-copilot/issues)
+2. Click "New Issue" 
+3. Choose the appropriate template for your request
+4. Fill out the form with your request details
+
+### Available Templates
+- **🐛 Bug Report** - Report broken features or errors
+- **🏃 Add or Modify Activity** - Add new activities or change existing ones  
+- **💡 Feature Request** - Request new website functionality
+- **🎨 Website Design & Usability** - Improve website appearance and ease of use
+- **📊 Student Data & Grades** - Features involving student information (requires special privacy protections)
+- **🔒 Security & Privacy Concern** - Report security issues or privacy concerns
+
+For detailed instructions, see the [Teacher's Guide to Issue Templates](../.github/ISSUE_TEMPLATE/README.md).

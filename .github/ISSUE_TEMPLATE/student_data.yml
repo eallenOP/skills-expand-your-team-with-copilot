@@ -1,0 +1,127 @@
+name: 📊 Student Data & Grades
+description: Request features related to student grades, scores, attendance, or academic data
+title: "📊 Student Data: "
+labels: ["enhancement", "student-data", "grades", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **⚠️ IMPORTANT PRIVACY NOTICE ⚠️**
+        
+        This template is for requesting features that involve student grades, scores, attendance, or other academic data. All features involving student data must follow strict privacy and security requirements.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: What student data feature do you need?
+      description: Describe what you'd like to track or manage regarding student information.
+      placeholder: "Example: Track attendance for each activity, or allow teachers to record participation scores for activities"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: data-types
+    attributes:
+      label: What type of student data is involved?
+      description: Select all that apply (this helps us implement proper security measures)
+      options:
+        - label: Activity participation/attendance
+        - label: Grades or scores
+        - label: Student contact information
+        - label: Academic performance tracking
+        - label: Behavior or disciplinary records
+        - label: Special needs or accommodations
+        - label: Parent/guardian information
+
+  - type: textarea
+    id: current-process
+    attributes:
+      label: How is this currently being done?
+      description: Describe the current manual process or system being used.
+      placeholder: "Example: Teachers currently track attendance on paper sheets and have to enter it into the gradebook manually"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: How should this work in the website?
+      description: Describe how you envision teachers and students using this feature.
+      placeholder: "Example: Teachers could click an 'Attendance' button for each activity and mark students as present/absent. Students could see their attendance record but not other students' records."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: who-can-access
+    attributes:
+      label: Who should be able to access this student data?
+      description: Select appropriate access levels for privacy protection.
+      options:
+        - Only the teacher sponsoring the activity
+        - Only school administrators
+        - Teachers and administrators
+        - Students can see their own data only
+        - Students can see their own data, teachers can see all student data
+        - Parents/guardians can see their child's data
+    validations:
+      required: true
+
+  - type: textarea
+    id: privacy-requirements
+    attributes:
+      label: Privacy and Security Requirements
+      description: Describe any specific privacy or security needs.
+      placeholder: "Example: This data should only be visible to the student's teachers, grades should be encrypted, or attendance records should be deleted after the trimester ends"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: grade-levels-affected
+    attributes:
+      label: Which grade levels would use this feature?
+      description: Select all that apply
+      options:
+        - label: 9th Grade (Freshmen)
+        - label: 10th Grade (Sophomores)
+        - label: 11th Grade (Juniors)
+        - label: 12th Grade (Seniors)
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Timeline needed
+      description: When do you need this feature?
+      options:
+        - Before the next trimester starts
+        - Before the end of this trimester
+        - Before the end of the school year
+        - Can wait until next school year
+        - No specific timeline
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other important details about this request?
+      placeholder: "Example: This needs to integrate with our existing gradebook system, or this is required for state reporting"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: Success Criteria
+      description: Check what needs to be working for this feature to be considered complete
+      options:
+        - label: Student data is properly secured and encrypted
+        - label: Only authorized users can access the data
+        - label: Students can only see their own information
+        - label: Teachers can easily input and manage the data
+        - label: The feature has been tested with sample data
+        - label: Clear privacy policies are displayed to users
+        - label: Data can be exported if needed for reporting
+        - label: All applicable privacy laws and school policies are followed
